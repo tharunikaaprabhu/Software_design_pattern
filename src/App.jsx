@@ -1,116 +1,35 @@
-// import React from 'react'
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { ModeToggle } from "./components/mode-toggle"
-import { GridPattern} from "./components/magicui/animated-grid-pattern"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Home } from "./pages/Web/Home"
+import Login from "./pages/Web/Login"
+import Register from "./pages/Web/Register"
+import Notfound from "./pages/Web/Notfound"
+import Weblayout from "./layout/Weblayout"
+import Adminlayout from "./layout/Adminlayout"
+import AdminDashboard from "./pages/Admin/AdminDashboard"
+import AdminUser from "./pages/Admin/AdminUser"
+import Event from "./pages/Web/Event"
 const App = () => {
   return (
     <div>
-        <ModeToggle/>
-        <GridPattern/>
-<Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Login</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Login</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. 
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="name"
-              defaultValue="Enter username"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Password
-            </Label>
-            <Input
-              id="username"
-              defaultValue="Enter password"
-              className="col-span-3"
-            />
-          </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">Login</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+      <BrowserRouter>
+      <Routes>
+        <Route element={<Weblayout/>}>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/event' element={<Event/>}/>
 
+        <Route path='*' element={<Notfound/>}/>
 
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Register</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Create An Account</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. 
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="name"
-              defaultValue="Enter username"
-              className="col-span-3"
-            />
-          </div>
+        </Route>
 
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Email
-            </Label>
-            <Input
-              id="username"
-              defaultValue="Enter Email"
-              className="col-span-3"
-            />
-          </div>
-          
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Password
-            </Label>
-            <Input
-              id="username"
-              defaultValue="Enter password"
-              className="col-span-3"
-            />
-          </div>
+        <Route element={<Adminlayout/>}>
+                        <Route path='/admin/dashboard' element={<AdminDashboard/>} />
+                        <Route path='/admin/users' element={<AdminUser/>} />
 
-        </div>
-        <DialogFooter>
-          <Button type="submit">Register</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-
-  
+                    </Route>
+      </Routes>
+      </BrowserRouter>
     </div>
   )
 }
