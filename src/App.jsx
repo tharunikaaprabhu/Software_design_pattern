@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Home } from "./pages/Web/Home"
+import Home from "./pages/Web/Home"
 import Login from "./pages/Web/Login"
 import Register from "./pages/Web/Register"
 import Notfound from "./pages/Web/Notfound"
@@ -8,6 +8,10 @@ import Adminlayout from "./layout/Adminlayout"
 import AdminDashboard from "./pages/Admin/AdminDashboard"
 import AdminUser from "./pages/Admin/AdminUser"
 import Event from "./pages/Web/Event"
+import Book from "./pages/Web/Book"
+import Contact from "./pages/Web/Contact"
+import Payment from "./pages/Web/Payment"
+import Confirm from "./pages/Web/Confirm"
 const App = () => {
   return (
     <div>
@@ -18,6 +22,10 @@ const App = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/event' element={<Event/>}/>
+        <Route path='/book' element={<Book/>}/>
+        <Route path='/Contact' element={<Contact/>}/>
+        <Route path='/Payment'  element={<Payment/>}/>
+        <Route path='/Confirm'  element={<Confirm/>}/>
 
         <Route path='*' element={<Notfound/>}/>
 

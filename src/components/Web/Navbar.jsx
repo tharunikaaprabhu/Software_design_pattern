@@ -1,49 +1,53 @@
+
 import { NavLink } from "react-router-dom";
 import { ModeToggle } from "../mode-toggle";
+import { Contact, Home } from 'lucide-react';
 
 const Navbar = () => {
-    const LinksData = [
-        {
-        title:'Home',
-        link:'/'
-    },
-
-        {
-        title:'Login',
-        link:'/login'
-    },
-
-        {
-        title:'Register',
-        link:'/register'
-    },
-    
+  const LinksData = [
     {
-        title:'Event',
-        link:'event'
-    }
-]
+      title: 'Home',
+      link: '/'
+    },
+    {
+      title: 'Login',
+      link: '/login'
+    },
+    {
+      title: 'Register',
+      link: '/register'
+    },
+    {
+      title: 'Events',
+      link: '/event'
+    },
+  ];
+
   return (
-    <div className='w-full h-[8vh] flex flex-row justify-center items-center bg-primary/5 border b-2 border-primary'>
-    <div className='h-full w-1/4 flex flex-row justify-center items-center text-2xl font-bold text-primary'>
-    Logo
-    </div>
-    <div className='h-full w-3/4 flex flex-row justify-end items-center text-xl font-bold gap-6'>
-    {
-     LinksData.map((data ,index ) => (
-        <li key={index} className="list-none">
-            <NavLink to={data.link}>
-                {data.title}
+    <nav className='w-full h-16 flex items-center bg-gradient-to-r from-primary via-secondary to-tertiary text-white shadow-lg'>
+      <div className='container mx-auto flex justify-between items-center px-4'>
+        <div className='flex items-center space-x-4'>
+          <NavLink to="/admin/dashboard" className="flex items-center space-x-2 hover:text-secondary transition-colors duration-300">
+            <Home className="h-8 w-8" />
+            <span className='text-2xl font-extrabold'>BLOOM</span>
+          </NavLink>
+        </div>
+        <div className='flex items-center space-x-6'>
+          {LinksData.map((data, index) => (
+            <NavLink key={index} to={data.link} className="hover:text-secondary transition-colors duration-300">
+              {data.title}
             </NavLink>
-
-        </li>
-
-     ))
-    }
-    <ModeToggle/>
-    </div>
-    </div>
-  )
-}
+          ))}
+          <NavLink to="/contact" className="flex items-center space-x-2 hover:text-secondary transition-colors duration-300">
+            <Contact className="h-6 w-6" />
+            <span>Contact</span>
+          </NavLink>
+          <ModeToggle />
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;
+

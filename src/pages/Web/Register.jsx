@@ -23,19 +23,19 @@ const Register = () => {
    <div className="grid w-full items-center gap-4">
      <div className="flex flex-col space-y-1.5">
        <Label htmlFor="name">Name</Label>
-       <Input id="name" placeholder="Enter name" />
+       <Input id="name" placeholder="Enter name" required/>
      </div>
      <div className="flex flex-col space-y-1.5">
        <Label htmlFor="framework">Email</Label>
-       <Input id="email" placeholder="Enter email" />
+       <Input id="email" placeholder="Enter email" required />
 
      </div>
      <div className="flex flex-col space-y-1.5">
-       <Label htmlFor="framework">Password</Label>
-       <Input id="password" placeholder="Enter password" />
+       <Label htmlFor="password">Password</Label>
+       <Input id="password" placeholder="Enter password"/>
      </div>
      <div className="flex flex-col space-y-1.5">
-       <Label htmlFor="framework">Confirm Password</Label>
+       <Label htmlFor="password">Confirm Password</Label>
        <Input id="password" placeholder="Enter password" />
      </div>
 
@@ -51,3 +51,5 @@ const Register = () => {
 }
 
 export default Register
+
+

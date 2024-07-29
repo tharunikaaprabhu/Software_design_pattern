@@ -2,7 +2,7 @@ import { Facebook, Twitter } from "lucide-react"
 
 const Footer = () => {
   return (
-    <div className='absolute bottom-0 left-0 w-full h-[8vh] flex flex-row justify-center items-center bg-primary/5 border t-2 border-primary'>
+    <div className='absolute bottom-0 left-0 w-full h-[8vh] flex flex-row justify-center items-center bg-primary/5 border t-2 border-primary  bg-gradient-to-r from-primary via-secondary to-tertiary shadow-lg'>
     <div className='h-full w-1/4 flex flex-row justify-center items-center text-xl font-bold text-primary'>
       © 2024
     </div>

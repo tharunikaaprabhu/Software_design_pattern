@@ -7,7 +7,7 @@ const Topbar = () => {
             <div className='w-[90%] flex items-center justify-end gap-4'>
                 <Avatar>
                     <AvatarImage src="https://github.com/shadcxn.png" alt="@shadcn" />
-                    <AvatarFallback>MM</AvatarFallback>
+                    <AvatarFallback>EO</AvatarFallback>
                 </Avatar>
                 <ModeToggle/>
             </div>
