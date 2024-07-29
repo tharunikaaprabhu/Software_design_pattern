@@ -17,7 +17,7 @@ const AdminDashboard = () => {
                   <Calendar className="h-6 w-6 text-primary" />
               </CardHeader>
               <CardContent>
-                  <div className="text-2xl font-bold">150</div>
+                  <div className="text-2xl font-bold">150+</div>
               </CardContent>
           </Card>
           <Card className='w-1/4 border border-primary'>
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
                   <DollarSign className="h-6 w-6 text-primary" />
               </CardHeader>
               <CardContent>
-                  <div className="text-2xl font-bold">$100,000</div>
+                  <div className="text-2xl font-bold">$1,00,000</div>
               </CardContent>
           </Card>
           <Card className='w-1/4 border border-primary'>
