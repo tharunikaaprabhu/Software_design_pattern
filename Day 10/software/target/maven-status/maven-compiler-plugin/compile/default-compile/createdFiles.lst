@@ -1,0 +1,5 @@
+com\roll\software\model\User.class
+com\roll\software\Repo\UserRepo.class
+com\roll\software\controller\UserController.class
+com\roll\software\service\UserService.class
+com\roll\software\SoftwareApplication.class
